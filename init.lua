@@ -480,6 +480,24 @@ require("lazy").setup({
 		},
 	},
 	{
+		"mattn/emmet-vim",
+		ft = { "html", "css", "javascript", "jsx", "tsx" },
+	},
+	{
+		"windwp/nvim-autopairs",
+		event = "InsertEnter",
+		config = function()
+			require("nvim-autopairs").setup()
+		end,
+	},
+	{
+		"windwp/nvim-ts-autotag",
+		ft = { "html", "jsx", "tsx", "javascript" },
+		config = function()
+			require("nvim-ts-autotag").setup()
+		end,
+	},
+	{
 		-- Main LSP Configuration
 		"neovim/nvim-lspconfig",
 		dependencies = {
@@ -686,12 +704,7 @@ require("lazy").setup({
 			--  - settings (table): Override the default settings passed when initializing the server.
 			--        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
 			local servers = {
-				clangd = {},
-				gopls = {},
-				pyright = {},
 				rust_analyzer = {},
-				ts_ls = {},
-				zls = {},
 
 				lua_ls = {
 					-- cmd = { ... },
@@ -706,6 +719,23 @@ require("lazy").setup({
 							-- diagnostics = { disable = { 'missing-fields' } },
 						},
 					},
+				},
+				html = {
+					format = {
+						enable = true,
+						wrapLineLength = 120,
+						unformatted = { "code", "pre", "textarea" },
+						contentUnformatted = { "pre", "code" },
+					},
+					hover = {
+						documentation = true,
+						references = true,
+					},
+					validate = {
+						scripts = true,
+						styles = true,
+					},
+					autoClosingTags = true,
 				},
 			}
 
@@ -1015,7 +1045,6 @@ require("lazy").setup({
 	{ -- Highlight, edit, and navigate code
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
-		main = "nvim-treesitter.configs", -- Sets main module to use for opts
 		-- [[ Configure Treesitter ]] See `:help nvim-treesitter`
 		opts = {
 			ensure_installed = {
