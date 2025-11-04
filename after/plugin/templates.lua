@@ -55,25 +55,3 @@ vim.api.nvim_create_autocmd("BufNewFile", {
 		end
 	end,
 })
-
--- Optional: JavaScript template
-local function insert_js_template()
-	local lines = {
-		"// JavaScript file",
-		"",
-		"document.addEventListener('DOMContentLoaded', function() {",
-		"  // Your code here",
-		"});",
-		"",
-	}
-	vim.api.nvim_buf_set_lines(0, 0, -1, false, lines)
-end
-
-vim.api.nvim_create_autocmd("BufNewFile", {
-	pattern = "*.js",
-	callback = function()
-		if vim.fn.line("$") == 1 and vim.fn.getline(1) == "" then
-			insert_js_template()
-		end
-	end,
-})
