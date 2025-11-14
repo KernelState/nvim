@@ -182,86 +182,86 @@ require("lazy").setup({
 	-- Use `opts = {}` to automatically pass options to a plugin's `setup()` function, forcing the plugin to be loaded.
 	--
 
-	{
-		"catppuccin/nvim",
-		name = "catppuccin",
-		priority = 1000,
-		config = function()
-			local catppuccin = require("catppuccin")
-			catppuccin.setup({
-				flavour = "auto", -- latte, frappe, macchiato, mocha
-				background = { -- :h background
-					light = "latte",
-					dark = "mocha",
-				},
-				transparent_background = true, -- disables setting the background color.
-				float = {
-					transparent = true, -- enable transparent floating windows
-					solid = false, -- use solid styling for floating windows, see |winborder|
-				},
-				show_end_of_buffer = true, -- shows the '~' characters after the end of buffers
-				term_colors = false, -- sets terminal colors (e.g. `g:terminal_color_0`)
-				dim_inactive = {
-					enabled = false, -- dims the background color of inactive window
-					shade = "dark",
-					percentage = 0.15, -- percentage of the shade to apply to the inactive window
-				},
-				no_italic = false, -- Force no italic
-				no_bold = false, -- Force no bold
-				no_underline = false, -- Force no underline
-				styles = { -- Handles the styles of general hi groups (see `:h highlight-args`):
-					comments = { "italic" }, -- Change the style of comments
-					conditionals = { "italic" },
-					loops = {},
-					functions = {},
-					keywords = { "bold" },
-					strings = {},
-					variables = {},
-					numbers = { "bold" },
-					booleans = { "bold" },
-					properties = {},
-					types = { "italic" },
-					operators = {},
-					-- miscs = {}, -- Uncomment to turn off hard-coded styles
-				},
-				lsp_styles = { -- Handles the style of specific lsp hl groups (see `:h lsp-highlight`).
-					virtual_text = {
-						errors = { "italic" },
-						hints = { "italic" },
-						warnings = { "italic" },
-						information = { "italic" },
-						ok = { "italic" },
-					},
-					underlines = {
-						errors = { "underline", "italic" },
-						hints = {},
-						warnings = { "underline" },
-						information = {},
-						ok = {},
-					},
-					inlay_hints = {
-						background = true,
-					},
-				},
-				color_overrides = {},
-				custom_highlights = {},
-				default_integrations = true,
-				auto_integrations = false,
-				integrations = {
-					cmp = true,
-					gitsigns = true,
-					nvimtree = true,
-					notify = false,
-					mini = {
-						enabled = true,
-						indentscope_color = "",
-					},
-					-- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
-				},
-				vim.cmd.colorscheme("catppuccin"),
-			})
-		end,
-	},
+	-- {
+	-- 	"catppuccin/nvim",
+	-- 	name = "catppuccin",
+	-- 	priority = 1000,
+	-- 	config = function()
+	-- 		local catppuccin = require("catppuccin")
+	-- 		catppuccin.setup({
+	-- 			flavour = "auto", -- latte, frappe, macchiato, mocha
+	-- 			background = { -- :h background
+	-- 				light = "latte",
+	-- 				dark = "mocha",
+	-- 			},
+	-- 			transparent_background = true, -- disables setting the background color.
+	-- 			float = {
+	-- 				transparent = true, -- enable transparent floating windows
+	-- 				solid = false, -- use solid styling for floating windows, see |winborder|
+	-- 			},
+	-- 			show_end_of_buffer = true, -- shows the '~' characters after the end of buffers
+	-- 			term_colors = false, -- sets terminal colors (e.g. `g:terminal_color_0`)
+	-- 			dim_inactive = {
+	-- 				enabled = false, -- dims the background color of inactive window
+	-- 				shade = "dark",
+	-- 				percentage = 0.15, -- percentage of the shade to apply to the inactive window
+	-- 			},
+	-- 			no_italic = false, -- Force no italic
+	-- 			no_bold = false, -- Force no bold
+	-- 			no_underline = false, -- Force no underline
+	-- 			styles = { -- Handles the styles of general hi groups (see `:h highlight-args`):
+	-- 				comments = { "italic" }, -- Change the style of comments
+	-- 				conditionals = { "italic" },
+	-- 				loops = {},
+	-- 				functions = {},
+	-- 				keywords = { "bold" },
+	-- 				strings = {},
+	-- 				variables = {},
+	-- 				numbers = { "bold" },
+	-- 				booleans = { "bold" },
+	-- 				properties = {},
+	-- 				types = { "italic" },
+	-- 				operators = {},
+	-- 				-- miscs = {}, -- Uncomment to turn off hard-coded styles
+	-- 			},
+	-- 			lsp_styles = { -- Handles the style of specific lsp hl groups (see `:h lsp-highlight`).
+	-- 				virtual_text = {
+	-- 					errors = { "italic" },
+	-- 					hints = { "italic" },
+	-- 					warnings = { "italic" },
+	-- 					information = { "italic" },
+	-- 					ok = { "italic" },
+	-- 				},
+	-- 				underlines = {
+	-- 					errors = { "underline", "italic" },
+	-- 					hints = {},
+	-- 					warnings = { "underline" },
+	-- 					information = {},
+	-- 					ok = {},
+	-- 				},
+	-- 				inlay_hints = {
+	-- 					background = true,
+	-- 				},
+	-- 			},
+	-- 			color_overrides = {},
+	-- 			custom_highlights = {},
+	-- 			default_integrations = true,
+	-- 			auto_integrations = false,
+	-- 			integrations = {
+	-- 				cmp = true,
+	-- 				gitsigns = true,
+	-- 				nvimtree = true,
+	-- 				notify = false,
+	-- 				mini = {
+	-- 					enabled = true,
+	-- 					indentscope_color = "",
+	-- 				},
+	-- 				-- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
+	-- 			},
+	-- 			vim.cmd.colorscheme("catppuccin"),
+	-- 		})
+	-- 	end,
+	-- },
 	-- Alternatively, use `config = function() ... end` for full control over the configuration.
 	-- If you prefer to call `setup` explicitly, use:
 	--    {
@@ -492,77 +492,77 @@ require("lazy").setup({
 			require("nvim-ts-autotag").setup()
 		end,
 	},
-	{
-		"hrsh7th/nvim-cmp",
-		event = "InsertEnter",
-		dependencies = {
-			"hrsh7th/cmp-nvim-lsp",
-			"hrsh7th/cmp-buffer",
-			"hrsh7th/cmp-path",
-			"hrsh7th/cmp-cmdline",
-			"L3MON4D3/LuaSnip",
-			"saadparwaiz1/cmp_luasnip",
-		},
-		config = function()
-			local cmp = require("cmp")
-			local luasnip = require("luasnip")
-			require("luasnip.loaders.from_vscode").lazy_load()
+	-- {
+	-- 	"hrsh7th/nvim-cmp",
+	-- 	event = "InsertEnter",
+	-- 	dependencies = {
+	-- 		"hrsh7th/cmp-nvim-lsp",
+	-- 		"hrsh7th/cmp-buffer",
+	-- 		"hrsh7th/cmp-path",
+	-- 		"hrsh7th/cmp-cmdline",
+	-- 		"L3MON4D3/LuaSnip",
+	-- 		"saadparwaiz1/cmp_luasnip",
+	-- 	},
+	-- 	config = function()
+	-- 		local cmp = require("cmp")
+	-- 		local luasnip = require("luasnip")
+	-- 		require("luasnip.loaders.from_vscode").lazy_load()
 
-			cmp.setup({
-				snippet = {
-					expand = function(args)
-						luasnip.lsp_expand(args.body)
-					end,
-				},
-				mapping = cmp.mapping.preset.insert({
-					["<C-n>"] = cmp.mapping.select_next_item(),
-					["<C-p>"] = cmp.mapping.select_prev_item(),
-					["<C-d>"] = cmp.mapping.scroll_docs(-4),
-					["<C-f>"] = cmp.mapping.scroll_docs(4),
-					["<C-Space>"] = cmp.mapping.complete(),
-					["<C-e>"] = cmp.mapping.abort(),
-					["<CR>"] = cmp.mapping.confirm({ select = true }),
-					["<Tab>"] = cmp.mapping(function(fallback)
-						if cmp.visible() then
-							cmp.select_next_item()
-						elseif luasnip.expand_or_jumpable() then
-							luasnip.expand_or_jump()
-						else
-							fallback()
-						end
-					end, { "i", "s" }),
-					["<S-Tab>"] = cmp.mapping(function(fallback)
-						if cmp.visible() then
-							cmp.select_prev_item()
-						elseif luasnip.jumpable(-1) then
-							luasnip.jump(-1)
-						else
-							fallback()
-						end
-					end, { "i", "s" }),
-				}),
-				sources = cmp.config.sources({
-					{ name = "nvim_lsp" },
-					{ name = "luasnip" },
-					{ name = "path" },
-					{ name = "buffer" },
-				}),
-				formatting = {
-					format = function(entry, vim_item)
-						local menu_icon = {
-							nvim_lsp = "[LSP]",
-							luasnip = "[Snip]",
-							buffer = "[Buf]",
-							path = "[Path]",
-							copilot = "[AI]",
-						}
-						vim_item.menu = menu_icon[entry.source.name]
-						return vim_item
-					end,
-				},
-			})
-		end,
-	},
+	-- 		cmp.setup({
+	-- 			snippet = {
+	-- 				expand = function(args)
+	-- 					luasnip.lsp_expand(args.body)
+	-- 				end,
+	-- 			},
+	-- 			mapping = cmp.mapping.preset.insert({
+	-- 				["<C-n>"] = cmp.mapping.select_next_item(),
+	-- 				["<C-p>"] = cmp.mapping.select_prev_item(),
+	-- 				["<C-d>"] = cmp.mapping.scroll_docs(-4),
+	-- 				["<C-f>"] = cmp.mapping.scroll_docs(4),
+	-- 				["<C-Space>"] = cmp.mapping.complete(),
+	-- 				["<C-e>"] = cmp.mapping.abort(),
+	-- 				["<CR>"] = cmp.mapping.confirm({ select = true }),
+	-- 				["<Tab>"] = cmp.mapping(function(fallback)
+	-- 					if cmp.visible() then
+	-- 						cmp.select_next_item()
+	-- 					elseif luasnip.expand_or_jumpable() then
+	-- 						luasnip.expand_or_jump()
+	-- 					else
+	-- 						fallback()
+	-- 					end
+	-- 				end, { "i", "s" }),
+	-- 				["<S-Tab>"] = cmp.mapping(function(fallback)
+	-- 					if cmp.visible() then
+	-- 						cmp.select_prev_item()
+	-- 					elseif luasnip.jumpable(-1) then
+	-- 						luasnip.jump(-1)
+	-- 					else
+	-- 						fallback()
+	-- 					end
+	-- 				end, { "i", "s" }),
+	-- 			}),
+	-- 			sources = cmp.config.sources({
+	-- 				{ name = "nvim_lsp" },
+	-- 				{ name = "luasnip" },
+	-- 				{ name = "path" },
+	-- 				{ name = "buffer" },
+	-- 			}),
+	-- 			formatting = {
+	-- 				format = function(entry, vim_item)
+	-- 					local menu_icon = {
+	-- 						nvim_lsp = "[LSP]",
+	-- 						luasnip = "[Snip]",
+	-- 						buffer = "[Buf]",
+	-- 						path = "[Path]",
+	-- 						copilot = "[AI]",
+	-- 					}
+	-- 					vim_item.menu = menu_icon[entry.source.name]
+	-- 					return vim_item
+	-- 				end,
+	-- 			},
+	-- 		})
+	-- 	end,
+	-- },
 
 	{ -- Autoformat
 		"stevearc/conform.nvim",
@@ -704,50 +704,50 @@ require("lazy").setup({
 		},
 	},
 
-	-- {
-	-- 	"rose-pine/neovim",
-	-- 	name = "rose-pine",
-	-- 	priority = 10000,
-	-- 	config = function()
-	-- 		require("rose-pine").setup({
-	-- 			variant = "main", -- or "moon" or "dawn"
-	-- 			dark_variant = "main",
-	-- 			dim_nc_background = false,
-	-- 			extend_background_behind_borders = true,
+	{
+		"rose-pine/neovim",
+		name = "rose-pine",
+		priority = 10000,
+		config = function()
+			require("rose-pine").setup({
+				variant = "main", -- or "moon" or "dawn"
+				dark_variant = "main",
+				dim_nc_background = false,
+				extend_background_behind_borders = true,
 
-	-- 			styles = {
-	-- 				bold = true,
-	-- 				italic = true,
-	-- 				transparency = true,
-	-- 			},
-	-- 		})
-	-- 		vim.cmd.colorscheme("rose-pine")
-	-- 		-- Force transparency for all background colors
-	-- 		local transparent_groups = {
-	-- 			"Normal",
-	-- 			"NormalNC",
-	-- 			"NormalFloat",
-	-- 			"FloatBorder",
-	-- 			"Pmenu",
-	-- 			"PmenuSel",
-	-- 			"PmenuKind",
-	-- 			"PmenuKindSel",
-	-- 			"PmenuExtra",
-	-- 			"PmenuExtraSel",
-	-- 			"NvimFloatNC",
-	-- 			"TelescopeNormal",
-	-- 			"TelescopeBorder",
-	-- 			"TelescopePromptNormal",
-	-- 			"WhichKeyFloat",
-	-- 			"CmpNormal",
-	-- 			"CmpFloatBorder",
-	-- 		}
+				styles = {
+					bold = true,
+					italic = true,
+					transparency = true,
+				},
+			})
+			vim.cmd.colorscheme("rose-pine")
+			-- Force transparency for all background colors
+			local transparent_groups = {
+				"Normal",
+				"NormalNC",
+				"NormalFloat",
+				"FloatBorder",
+				"Pmenu",
+				"PmenuSel",
+				"PmenuKind",
+				"PmenuKindSel",
+				"PmenuExtra",
+				"PmenuExtraSel",
+				"NvimFloatNC",
+				"TelescopeNormal",
+				"TelescopeBorder",
+				"TelescopePromptNormal",
+				"WhichKeyFloat",
+				"CmpNormal",
+				"CmpFloatBorder",
+			}
 
-	-- 		for _, group in ipairs(transparent_groups) do
-	-- 			vim.api.nvim_set_hl(0, group, { bg = "NONE" })
-	-- 		end
-	-- 	end,
-	-- },
+			for _, group in ipairs(transparent_groups) do
+				vim.api.nvim_set_hl(0, group, { bg = "NONE" })
+			end
+		end,
+	},
 
 	-- setup must be called before loading
 	-- Highlight todo, notes, etc in comments
@@ -769,26 +769,26 @@ require("lazy").setup({
 			require("mini.surround").setup()
 		end,
 	},
-	{
-		"zbirenbaum/copilot.lua",
-		cmd = "Copilot",
-		event = "InsertEnter",
-		config = function()
-			require("copilot").setup({
-				suggestion = {
-					enabled = true,
-					auto_trigger = true,
-					keymap = {
-						accept = "<Tab>",
-						next = "<M-]>",
-						prev = "<M-[>",
-						dismiss = "<C-]>",
-					},
-				},
-				panel = { enabled = false },
-			})
-		end,
-	},
+	-- {
+	-- 	"zbirenbaum/copilot.lua",
+	-- 	cmd = "Copilot",
+	-- 	event = "InsertEnter",
+	-- 	config = function()
+	-- 		require("copilot").setup({
+	-- 			suggestion = {
+	-- 				enabled = true,
+	-- 				auto_trigger = true,
+	-- 				keymap = {
+	-- 					accept = "<Tab>",
+	-- 					next = "<M-]>",
+	-- 					prev = "<M-[>",
+	-- 					dismiss = "<C-]>",
+	-- 				},
+	-- 			},
+	-- 			panel = { enabled = false },
+	-- 		})
+	-- 	end,
+	-- },
 	{
 		"neovim/nvim-lspconfig",
 		dependencies = {
@@ -796,9 +796,6 @@ require("lazy").setup({
 			"mason-org/mason-lspconfig.nvim",
 			"WhoIsSethDaniel/mason-tool-installer.nvim",
 			{ "j-hui/fidget.nvim", opts = {} },
-
-			-- LSP completion integration
-			"hrsh7th/cmp-nvim-lsp",
 		},
 		config = function()
 			----------------------------------------------------------------------
@@ -824,11 +821,6 @@ require("lazy").setup({
 					end,
 				},
 			})
-
-			----------------------------------------------------------------------
-			-- 🔹 CAPABILITIES FROM CMP
-			----------------------------------------------------------------------
-			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 			----------------------------------------------------------------------
 			-- 🔹 SERVER CONFIG
