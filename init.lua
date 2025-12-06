@@ -11,6 +11,14 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 vim.g.netrw_banner = 0
 vim.keymap.set("n", "<leader>fe", ":Ex<CR>", { noremap = true, silent = true })
+
+-- Proper home row now
+vim.keymap.set("n", "j", "<Left>", nil)
+vim.keymap.set("n", "k", "<Down>", nil)
+vim.keymap.set("n", "l", "<Up>", nil)
+vim.keymap.set("n", ";", "<Right>", nil)
+vim.keymap.set("n", "\\", "<Plug>(repeat-last-f)", nil)
+
 vim.opt.cursorlineopt = "number"
 
 -- Set to true if you have a Nerd Font installed and selected in the terminal
