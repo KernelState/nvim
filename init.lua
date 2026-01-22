@@ -12,13 +12,6 @@ vim.g.maplocalleader = " "
 vim.g.netrw_banner = 0
 vim.keymap.set("n", "<leader>fe", ":Ex<CR>", { noremap = true, silent = true })
 
--- Proper home row now
-vim.keymap.set("n", "j", "<Left>", nil)
-vim.keymap.set("n", "k", "<Down>", nil)
-vim.keymap.set("n", "l", "<Up>", nil)
-vim.keymap.set("n", ";", "<Right>", nil)
-vim.keymap.set("n", "\\", "<Plug>(repeat-last-f)", nil)
-
 vim.opt.cursorlineopt = "number"
 
 -- Set to true if you have a Nerd Font installed and selected in the terminal
@@ -867,7 +860,12 @@ require("lazy").setup({
 				handlers = {
 					function(server_name)
 						local server = servers[server_name] or {}
-						server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
+						server.capabilities = vim.tbl_deep_extend(
+							"force",
+							{},
+							vim.lsp.protocol.make_client_capabilities(),
+							server.capabilities or {}
+						)
 						require("lspconfig")[server_name].setup(server)
 					end,
 				},
